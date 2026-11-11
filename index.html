@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171512">
+  <meta name="description" content="Cherry Hot Tattoo Studio, no Centro de Poços de Caldas. Consulte o trabalho e envie seu pedido de agendamento.">
+  <title>Cherry Hot Tattoo Studio | Poços de Caldas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #171512;
+      --paper: #f5f0e7;
+      --muted: #aaa399;
+      --red: #d33b2f;
+      --line: rgba(245, 240, 231, .2);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--ink); color: var(--paper); font-family: var(--sans); }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .wrap { width: min(1240px, calc(100% - 64px)); margin: 0 auto; }
+
+    .topbar { height: 74px; border-bottom: 1px solid var(--line); display: flex; align-items: center; }
+    .topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-size: 13px; font-weight: 700; letter-spacing: 0; }
+    .brand-mark { display: grid; place-items: center; width: 34px; height: 34px; color: var(--ink); background: var(--red); border-radius: 50%; font-family: var(--serif); font-size: 19px; font-style: italic; }
+    .nav { display: flex; align-items: center; gap: 31px; font-size: 12px; color: #d0c9bd; }
+    .nav a { text-decoration: none; transition: color .2s ease; }
+    .nav a:hover { color: white; }
+    .nav .nav-book { color: var(--paper); border: 1px solid var(--line); padding: 11px 16px; }
+
+    .hero { display: grid; grid-template-columns: 1fr .86fr; min-height: 610px; align-items: stretch; padding: 58px 0 64px; gap: 7%; }
+    .hero-copy { display: flex; flex-direction: column; justify-content: center; padding: 0 0 9px; }
+    .eyebrow { color: var(--red); text-transform: uppercase; letter-spacing: 0; font-size: 10px; font-weight: 700; display: flex; gap: 10px; align-items: center; }
+    .eyebrow::before { content: ""; width: 27px; height: 1px; background: currentColor; }
+    h1 { margin: 24px 0 19px; max-width: 700px; font-family: var(--serif); font-size: clamp(52px, 7vw, 91px); line-height: .99; font-weight: 500; letter-spacing: 0; }
+    h1 em { color: var(--red); font-weight: 500; }
+    .hero-description { max-width: 440px; margin: 0; color: #c1baaf; font-size: 15px; line-height: 1.8; }
+    .hero-actions { display: flex; align-items: center; gap: 23px; margin-top: 32px; }
+    .button { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 0 19px; text-decoration: none; border: 1px solid transparent; font-size: 12px; font-weight: 700; transition: background .2s ease, color .2s ease, border-color .2s ease; }
+    .button-primary { background: var(--red); color: white; }
+    .button-primary:hover { background: #e44c3f; }
+    .text-link { font-size: 12px; text-decoration: none; color: #e2dcd2; border-bottom: 1px solid #625d55; padding: 7px 0; }
+    .text-link:hover { border-color: var(--red); }
+    .hero-note { display: flex; align-items: center; gap: 10px; margin-top: 46px; color: #9f988d; font-size: 11px; }
+    .rating-stars { color: var(--red); letter-spacing: 0; font-size: 13px; }
+    .hero-note strong { color: var(--paper); font-weight: 600; }
+    .hero-image { position: relative; min-height: 490px; }
+    .hero-image::before { content: ""; position: absolute; z-index: 0; top: 19px; right: -17px; width: 66%; height: 68%; border: 1px solid rgba(211, 59, 47, .65); }
+    .hero-image img { position: relative; z-index: 1; display: block; width: 100%; height: 100%; max-height: 530px; object-fit: cover; object-position: center 36%; filter: saturate(.78); }
+    .image-caption { position: absolute; z-index: 2; left: -22px; bottom: 23px; padding: 14px 18px; background: var(--paper); color: var(--ink); font-size: 10px; text-transform: uppercase; letter-spacing: 0; }
+    .image-caption strong { display: block; margin-top: 4px; font-family: var(--serif); font-size: 17px; font-weight: 500; text-transform: none; }
+
+    .details-band { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .details-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; }
+    .detail { min-height: 110px; display: flex; align-items: center; gap: 15px; padding: 20px 28px 20px 0; }
+    .detail + .detail { padding-left: 28px; border-left: 1px solid var(--line); }
+    .detail-icon { color: var(--red); font-size: 19px; }
+    .detail small { display: block; margin-bottom: 6px; color: #999187; text-transform: uppercase; font-size: 9px; }
+    .detail p, .detail a { margin: 0; font-size: 12px; line-height: 1.55; text-decoration: none; }
+    .detail a:hover { color: #ff887b; }
+
+    .section { padding: 112px 0; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 35px; margin-bottom: 43px; }
+    .section-heading h2 { margin: 13px 0 0; font-family: var(--serif); font-size: clamp(37px, 5vw, 57px); font-weight: 500; line-height: 1.08; letter-spacing: 0; }
+    .section-heading p { max-width: 330px; margin: 0 0 5px; color: #aaa399; font-size: 12px; line-height: 1.8; }
+    .gallery { display: grid; grid-template-columns: 1fr .77fr .77fr; gap: 13px; align-items: stretch; }
+    .gallery figure { min-width: 0; margin: 0; background: #282520; }
+    .gallery img { display: block; width: 100%; height: 100%; min-height: 310px; max-height: 430px; object-fit: cover; filter: saturate(.76); transition: filter .35s ease, transform .55s ease; }
+    .gallery figure { overflow: hidden; }
+    .gallery figure:hover img { filter: saturate(1); transform: scale(1.025); }
+    .gallery figure:first-child img { object-position: center 38%; }
+    .gallery figcaption { padding: 13px 15px; color: #bbb4a9; font-size: 10px; }
+
+    .booking { background: var(--paper); color: var(--ink); padding: 100px 0; }
+    .booking-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 10%; align-items: start; }
+    .booking .eyebrow { color: var(--red); }
+    .booking h2 { max-width: 410px; margin: 19px 0; font-family: var(--serif); font-size: clamp(43px, 5.2vw, 66px); font-weight: 500; line-height: 1.02; letter-spacing: 0; }
+    .booking-intro { max-width: 380px; color: #625e57; font-size: 13px; line-height: 1.8; }
+    .booking-contact { margin-top: 31px; padding-top: 20px; border-top: 1px solid #d8d1c6; font-size: 11px; color: #777169; }
+    .booking-contact a { color: var(--ink); font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .form { display: grid; grid-template-columns: 1fr 1fr; gap: 17px 14px; padding-top: 7px; }
+    .field { display: flex; flex-direction: column; gap: 8px; }
+    .field-wide { grid-column: 1 / -1; }
+    .field label { color: #625e57; font-size: 10px; font-weight: 700; }
+    .field input, .field select, .field textarea { width: 100%; min-height: 47px; border: 1px solid #d3ccc1; border-radius: 0; outline: none; padding: 12px 13px; background: transparent; color: var(--ink); font-size: 12px; }
+    .field textarea { min-height: 91px; resize: vertical; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--red); box-shadow: 0 0 0 1px var(--red); }
+    .field input::placeholder, .field textarea::placeholder { color: #999187; }
+    .form-submit { grid-column: 1 / -1; width: fit-content; min-width: 190px; border: 0; cursor: pointer; }
+    .form-note { grid-column: 1 / -1; margin: -5px 0 0; color: #79736b; font-size: 10px; line-height: 1.6; }
+
+    .reviews { padding: 71px 0; border-bottom: 1px solid var(--line); }
+    .reviews-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .reviews h2 { margin: 10px 0 0; font-family: var(--serif); font-size: 36px; font-weight: 500; letter-spacing: 0; }
+    .review-score { display: flex; align-items: center; gap: 20px; }
+    .score-number { font-family: var(--serif); font-size: 48px; }
+    .score-copy { color: #aaa399; font-size: 11px; line-height: 1.8; }
+    .score-copy strong { color: var(--paper); }
+    .review-button { border: 1px solid var(--line); padding: 12px 16px; text-decoration: none; font-size: 11px; }
+    .review-button:hover { border-color: var(--red); }
+
+    footer { padding: 29px 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; color: #999187; font-size: 10px; }
+    .footer-inner a { text-decoration: none; }
+    .footer-inner a:hover { color: var(--paper); }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 40px, 550px); }
+      .topbar { height: 65px; }
+      .nav { gap: 15px; }
+      .nav a:not(.nav-book) { display: none; }
+      .nav .nav-book { padding: 10px 12px; }
+      .hero { grid-template-columns: 1fr; gap: 39px; padding: 58px 0 45px; }
+      h1 { max-width: 560px; font-size: clamp(54px, 14vw, 78px); }
+      .hero-image { min-height: 380px; height: 420px; margin: 0 9px 0 12px; }
+      .hero-image img { max-height: none; }
+      .image-caption { left: -12px; }
+      .hero-note { margin-top: 31px; }
+      .details-grid { grid-template-columns: 1fr; padding: 8px 0; }
+      .detail { min-height: 75px; padding: 12px 0; }
+      .detail + .detail { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
+      .section { padding: 75px 0; }
+      .section-heading { display: block; margin-bottom: 27px; }
+      .section-heading p { margin-top: 16px; }
+      .gallery { grid-template-columns: 1fr 1fr; gap: 9px; }
+      .gallery figure:first-child { grid-column: 1 / -1; }
+      .gallery img { min-height: 230px; max-height: 320px; }
+      .gallery figure:first-child img { height: 340px; }
+      .booking { padding: 76px 0; }
+      .booking-grid { grid-template-columns: 1fr; gap: 37px; }
+      .booking h2 { max-width: 500px; }
+      .reviews { padding: 57px 0; }
+      .reviews-inner { align-items: flex-start; flex-direction: column; }
+      .review-score { gap: 13px; }
+    }
+
+    @media (max-width: 430px) {
+      .wrap { width: calc(100% - 32px); }
+      .brand { font-size: 11px; }
+      .brand-mark { width: 31px; height: 31px; }
+      .hero-actions { gap: 14px; flex-wrap: wrap; }
+      .hero-image { height: 360px; min-height: 360px; }
+      .form { grid-template-columns: 1fr; }
+      .field-wide, .form-submit, .form-note { grid-column: auto; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#inicio" aria-label="Cherry Hot Tattoo Studio, início">
+        <span class="brand-mark" aria-hidden="true">C</span>
+        <span>CHERRY HOT TATTOO STUDIO</span>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#estudio">O estúdio</a>
+        <a href="#localizacao">Localização</a>
+        <a class="nav-book" href="#agendamento">Agendar horário <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="inicio">
+      <div class="hero-copy">
+        <span class="eyebrow">Estúdio de tatuagem · Poços de Caldas</span>
+        <h1>Marcas que<br>contam <em>histórias.</em></h1>
+        <p class="hero-description">Uma ideia, um desenho, uma história sua. Converse com o estúdio e dê o primeiro passo para transformar sua inspiração em tatuagem.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#agendamento">Peça seu horário <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="tel:+553537217768">Ligue (35) 3721-7768</a>
+        </div>
+        <div class="hero-note"><span class="rating-stars" aria-label="5 estrelas">★★★★★</span><strong>4,6</strong><span>no Google · 43 avaliações</span></div>
+      </div>
+      <div class="hero-image">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TTB7uyFaWH602Ub9mIw4vLdTkipoQQaAeG3vu_NabWFRuT-8Rnkg8YRQgEVZXjHPPN5vNfasVWwo8HhdOndOatORMcHL6d-ImH05bRC6hew9NfHNisZuZg9Zaotk97O3kT5nk=w900-h1200-k-no" alt="Foto do Cherry Hot Tattoo Studio publicada no Google Maps" fetchpriority="high">
+        <div class="image-caption">No coração de Poços de Caldas<strong>Cherry Hot Tattoo</strong></div>
+      </div>
+    </section>
+
+    <section class="details-band" id="localizacao" aria-label="Informações do estúdio">
+      <div class="wrap details-grid">
+        <div class="detail"><span class="detail-icon" aria-hidden="true">⌖</span><div><small>Visite o estúdio</small><p>R. Rio de Janeiro, 230 - Centro<br>Poços de Caldas - MG</p></div></div>
+        <div class="detail"><span class="detail-icon" aria-hidden="true">◷</span><div><small>Atendimento</small><p>Consulte disponibilidade<br>pelo telefone</p></div></div>
+        <div class="detail"><span class="detail-icon" aria-hidden="true">↗</span><div><small>Entre em contato</small><a href="tel:+553537217768">(35) 3721-7768</a></div></div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="estudio">
+      <div class="section-heading">
+        <div><span class="eyebrow">Um olhar por dentro</span><h2>O estúdio</h2></div>
+        <p>Encontre o Cherry Hot Tattoo no Centro de Poços de Caldas. As imagens abaixo são do perfil do estúdio no Google.</p>
+      </div>
+      <div class="gallery">
+        <figure>
+          <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Q2UqYnzL4A6YTN8W8HugJ0lnsM5r4E63Pzxk2pABPch0o_Sq4ebYw5WH3j9Z2tmF6-6e6ZK5GKxL9s82vkuw_Ysb5MA2WUoTRNiFSInFAB8aqQPRE1DejCb0mXhuManWPZM_t_=w800-h1000-k-no" alt="Foto de tatuagem do perfil Google do estúdio" loading="lazy">
+          <figcaption>Foto publicada no Google Maps</figcaption>
+        </figure>
+        <figure>
+          <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TTB7uyFaWH602Ub9mIw4vLdTkipoQQaAeG3vu_NabWFRuT-8Rnkg8YRQgEVZXjHPPN5vNfasVWwo8HhdOndOatORMcHL6d-ImH05bRC6hew9NfHNisZuZg9Zaotk97O3kT5nk=w600-h800-k-no" alt="Imagem do perfil Google do Cherry Hot Tattoo" loading="lazy">
+          <figcaption>Cherry Hot Tattoo Studio</figcaption>
+        </figure>
+        <figure>
+          <img src="https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=TsnyVlLJsGGDIHW1_oOENA&cb_client=maps_sv.tactile.gps&w=600&h=800&yaw=185.50558&pitch=0&thumbfov=100" alt="Vista da rua do endereço do estúdio em Poços de Caldas" loading="lazy">
+          <figcaption>Vista da rua · Centro, Poços de Caldas</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="booking" id="agendamento">
+      <div class="wrap booking-grid">
+        <div>
+          <span class="eyebrow">Vamos conversar</span>
+          <h2>Sua próxima tattoo começa aqui.</h2>
+          <p class="booking-intro">Conte um pouco sobre a ideia e indique quando gostaria de vir. Seu pedido será preparado para enviar pelo WhatsApp ao estúdio.</p>
+          <div class="booking-contact">Prefere falar direto? <a href="tel:+553537217768">Ligue para (35) 3721-7768</a></div>
+        </div>
+        <form class="form" id="booking-form">
+          <div class="field">
+            <label for="name">Seu nome</label>
+            <input id="name" name="name" autocomplete="name" placeholder="Como podemos te chamar?" required>
+          </div>
+          <div class="field">
+            <label for="phone">Seu telefone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(00) 00000-0000" required>
+          </div>
+          <div class="field">
+            <label for="date">Data desejada</label>
+            <input id="date" name="date" type="date" required>
+          </div>
+          <div class="field">
+            <label for="style">Tipo de atendimento</label>
+            <select id="style" name="style" required>
+              <option value="" disabled selected>Selecione uma opção</option>
+              <option>Tatuagem</option>
+              <option>Piercing</option>
+              <option>Outro / tirar dúvida</option>
+            </select>
+          </div>
+          <div class="field field-wide">
+            <label for="idea">Conte sobre sua ideia</label>
+            <textarea id="idea" name="idea" placeholder="Local do corpo, tamanho aproximado e referências que já tem..."></textarea>
+          </div>
+          <button class="button button-primary form-submit" type="submit">Enviar pedido <span aria-hidden="true">↗</span></button>
+          <p class="form-note">O envio abre uma conversa no WhatsApp. O horário só fica confirmado após retorno do estúdio.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <div class="wrap reviews-inner">
+        <div><span class="eyebrow">Quem já conhece</span><h2>Avaliações no Google</h2></div>
+        <div class="review-score"><span class="score-number">4,6</span><div class="score-copy"><span class="rating-stars">★★★★★</span><br><strong>43 avaliações</strong><br>Nota informada pelo Google</div></div>
+        <a class="review-button" href="https://www.google.com/maps/search/?api=1&query=Cherry+Hot+Tattoo+Studio+Po%C3%A7os+de+Caldas" target="_blank" rel="noopener noreferrer">Ver no Google Maps ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <a class="brand" href="#inicio"><span class="brand-mark" aria-hidden="true">C</span><span>CHERRY HOT TATTOO STUDIO</span></a>
+      <span>R. Rio de Janeiro, 230 · Poços de Caldas, MG</span>
+      <a href="https://www.facebook.com/dinho.cherry.7" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+    </div>
+  </footer>
+
+  <script>
+    const appointmentDate = document.querySelector("#date");
+    appointmentDate.min = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+
+    document.querySelector("#booking-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      const details = [
+        "Olá! Gostaria de solicitar um agendamento no Cherry Hot Tattoo Studio.",
+        "Nome: " + formData.get("name"),
+        "Telefone: " + formData.get("phone"),
+        "Data desejada: " + formData.get("date"),
+        "Atendimento: " + formData.get("style"),
+        "Ideia: " + (formData.get("idea") || "Não informado")
+      ].join("\n");
+      window.open("https://wa.me/553537217768?text=" + encodeURIComponent(details), "_blank", "noopener,noreferrer");
+    });
+  </script>
+</body>
+</html>
